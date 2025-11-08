@@ -50,6 +50,7 @@ bool do_exec(int count, ...)
 
     va_end(args);
 
+    fflush(stdout);
     fork();
     int rv = execv(command[0], &command[1]);
 
@@ -85,6 +86,7 @@ bool do_exec_redirect(const char *outputfile, int count, ...)
         perror("open");
         abort();
     }
+    fflush(stdout);
     switch (kidpid = fork()) {
     case -1: perror("fork"); abort();
     case 0:
