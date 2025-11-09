@@ -111,6 +111,8 @@ make ARCH=${ARCH} CROSS_COMPILE=${CROSS_COMPILE}
 cp writer ${OUTDIR}/rootfs/home/
 
 cp ${PWD}/*.sh ${OUTDIR}/rootfs/home/
+cp ${PWD}/conf/username.txt ${OUTDIR}/rootfs/home/conf/username.txt
+cp ${PWD}/conf/assignment.txt ${OUTDIR}/rootfs/home/conf/assignment.txt
 
 sudo chown -R root:root *
 
@@ -119,4 +121,5 @@ find . | cpio -H newc -ov --owner root:root > ${OUTDIR}/initramfs.cpio
 gzip -f ${OUTDIR}/initramfs.cpio
 
 cp ${OUTDIR}/linux-stable/arch/${ARCH}/boot/Image ${OUTDIR}
+cp ${OUTDIR}/linux-stable/vmlinux ${OUTDIR}
 
