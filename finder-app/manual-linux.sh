@@ -38,7 +38,7 @@ if [ ! -e ${OUTDIR}/linux-stable/arch/${ARCH}/boot/Image ]; then
     make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- mrproper
     make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- defconfig
     #cp  ../.config .
-    time "" | make -j4 ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- all && \
+    time "" | make -j16 ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- all && \
         make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- modules && \
         make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- dtbs
 fi
