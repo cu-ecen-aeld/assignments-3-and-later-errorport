@@ -34,7 +34,7 @@ echo "Writing ${NUMFILES} files containing string ${WRITESTR} to ${WRITEDIR}"
 rm -rf "${WRITEDIR}"
 
 # create $WRITEDIR if not assignment1
-assignment=`assignment4-buildroot`
+assignment="assignment4-buildroot"
 
 if [ $assignment != 'assignment1' ]
 then
