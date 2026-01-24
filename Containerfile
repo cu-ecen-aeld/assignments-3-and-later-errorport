@@ -33,7 +33,9 @@ RUN apt-get install -y \
     rsync
 RUN apt install -y \
     valgrind \
-    netcat
+    netcat \
+    sshpass \
+    psmisc
 
 #RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
 #    locale-gen
